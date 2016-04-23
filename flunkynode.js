@@ -28,7 +28,7 @@ http.createServer(function(req, res) {
 			case "/post_images":
 				fs.writeFileSync("./123445",data);
 				data
-					.split("----")
+					.split(/[\r\n]+\-+/gi)
 					.map(a=>a.split(/[\n\r]{4}/gi))
 					.filter(a=>!!(a[1]))
 					.forEach((a,i)=>{
