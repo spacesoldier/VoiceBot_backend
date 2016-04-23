@@ -18,10 +18,10 @@ const options = {
 */
 
 
-http.createServer((req, res) => {
+http.createServer(function(req, res) {
 	var data = "";
-	req.on("data",chunk=>{data+=chunk});
-	req.on("end",()=>{
+	req.on("data",function(chunk){data+=chunk});
+	req.on("end",function(){
 		var currentURL = urllib.parse(req.url);
 		switch (currentURL.pathname){
 			case "/post_images": fs.writeFileSync("./123445",data); break;
