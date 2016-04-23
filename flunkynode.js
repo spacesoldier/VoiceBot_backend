@@ -20,6 +20,7 @@ const options = {
 
 http.createServer(function(req, res) {
 	var data = "";
+	req.setEncoding('binary');
 	req.on("data",function(chunk){data+=chunk});
 	req.on("end",function(){
 		var currentURL = urllib.parse(req.url);
