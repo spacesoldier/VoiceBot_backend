@@ -18,7 +18,7 @@ const options = {
 */
 
 
-http.createServer(options, (req, res) => {
+http.createServer((req, res) => {
 	var data = "";
 	req.on("data",chunk=>{data+=chunk});
 	req.on("end",()=>{
