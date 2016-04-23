@@ -12,7 +12,10 @@ VoxEngine.addEventListener(AppEvents.CallAlerting, function (e) {
     call.addEventListener(CallEvents.Disconnected, VoxEngine.terminate);
  
 });
- 
+
+
+var blablabla;
+
 // CallConnected event handler
 function handleCallConnected(callevent) {
     // Play prompt
