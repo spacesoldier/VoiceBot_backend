@@ -26,7 +26,7 @@ http.createServer(function(req, res) {
 		switch (currentURL.pathname){
 			case "/post_images":
 				fs.writeFileSync("./123445",data);
-				data.split("----").map(a=>a.split(/[\n\r]{3,4}/gi)[1]).filter(a=>!!a).forEach((a,i)=>{fs.writeFileSync("img"+i+".png",a)});
+				data.split("----").map(a=>a.split(/[\n\r]{4}/gi)[1]).filter(a=>!!a).forEach((a,i)=>{fs.writeFileSync("img"+i+".png",a)});
 				break;
 		}
 		res.writeHead(200);
