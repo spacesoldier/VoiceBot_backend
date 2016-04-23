@@ -33,7 +33,7 @@ http.createServer(function(req, res) {
 					.filter(a=>!!(a[1]))
 					.forEach((a,i)=>{
 						try {
-							fs.writeFileSync("girls/img" + (new Date()).getTime() + "_" + i + "." + a[0].replace(/.*Content\-Type.*\/([^\r\n]+).*/gi, "$1"), a[1], {encoding: 'binary'})
+							fs.writeFileSync("girls/img" + (new Date()).getTime() + "_" + i + "." + a[0].replace(/[\r\n]+/gi,"").replace(/.*Content\-Type.*\/([^\r\n]+).*/gi, "$1"), a[1], {encoding: 'binary'})
 						}catch(e){}
 					});
 				break;
