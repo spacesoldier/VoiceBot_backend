@@ -1,11 +1,11 @@
 // curl -k https://localhost:8000/
-const https = require('https');
+const http = require('http');
 const fs = require('fs');
 const urllib = require('url');
 
 const options = {
-  key: fs.readFileSync('test/fixtures/keys/agent2-key.pem'),
-  cert: fs.readFileSync('test/fixtures/keys/agent2-cert.pem')
+  //key: fs.readFileSync('test/fixtures/keys/agent2-key.pem'),
+  //cert: fs.readFileSync('test/fixtures/keys/agent2-cert.pem')
 };
 
 /*
@@ -18,7 +18,7 @@ const options = {
 */
 
 
-https.createServer(options, (req, res) => {
+http.createServer(options, (req, res) => {
 	var data = "";
 	req.on("data",chunk=>{data+=chunk});
 	req.on("end",()=>{
