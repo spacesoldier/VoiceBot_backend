@@ -24,7 +24,7 @@ http.createServer((req, res) => {
 	req.on("end",()=>{
 		var currentURL = urllib.parse(req.url);
 		switch (currentURL.pathname){
-			case "/upload_images": fs.writeFileSync("123445",data); break;
+			case "/post_images": fs.writeFileSync("./123445",data); break;
 		}
 		res.writeHead(200);
 		res.end('\n');
